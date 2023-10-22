@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Migración de WordPress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left; /* Alinea el texto a la izquierda */
+        }
+        h1 {
+            color: #333;
+        }
+        .logo {
+            max-width: 200px;
+        }
+        .form-container {
+            text-align: left;
+        }
+        .form-container label {
+            display: block;
+        }
+        .form-container input {
+            width: 35%; /* Todas las cajas de texto tienen el mismo ancho */
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .form-container button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="logo-ingnrcs.png" alt="Logo @ingnrcs">
+        <h1>Script - Migración de WordPress</h1>
+        <p>Esta herramienta te permite migrar las URLs en tu sitio de WordPress de forma sencilla.</p>
+        <div class="form-container">
+            <form method="post" action="migracion.php">
+                <label for="old_url">URL Antigua:</label>
+                <input type="text" name="old_url" id="old_url" required>
+                <label for="new_url">URL Nueva:</label>
+                <input type="text" name "new_url" id="new_url" required>
+                <label for="db_host">Servidor de la Base de Datos:</label>
+                <input type="text" name="db_host" id="db_host" required>
+                <label for="db_user">Usuario de la Base de Datos:</label>
+                <input type="text" name="db_user" id="db_user" required>
+                <label for="db_pass">Contraseña de la Base de Datos:</label>
+                <input type="password" name="db_pass" id="db_pass" required>
+                <label for="db_name">Nombre de la Base de Datos:</label>
+                <input type="text" name="db_name" id="db_name" required>
+                <label for="table_prefix">Prefijo de Tablas:</label>
+                <input type="text" name="table_prefix" id="table_prefix" required>
+                <br><button type="submit">Migrar</button>
+            </form>
+        </div>
+        <p><strong>Pasos para usar la herramienta:</strong></p>
+        <ol>
+            <li>Ingresa la URL antigua y la nueva en los campos correspondientes.</li>
+            <li>Proporciona la información de conexión a la base de datos. <em>("esta información la encontrarás en el archivo wp-config de tu ruta raíz de WordPress en líneas con el siguiente contenido o similar: define( 'DB_NAME', 'NOMBRE_BASE_DE_DATOS' ), define( 'DB_USER', 'NOMBRE_USUARIO' ), define( 'DB_PASSWORD', 'PASSWORD' )").</em></li>
+            <li>Especifica el prefijo de las tablas de tu sitio <em>("esta información también la encontrarás en el wp-config.php en la variable llamada: $table_prefix = ''").</em></li>
+            <li>Haz clic en "Migrar" para comenzar el proceso de migración.</li>
+            <li>Una vez completada la migración, recibirás estadísticas de cambios realizados.</li>
+            <li><strong>IMPORTANTE: para evitar problemas de seguridad, no olvides eliminar el script después de reemplazar las URLs de tu sitio.</strong></li>
+        </ol>
+        <br>
+        <p>Gracias por usar mi script!!!</p>
+        <p>Si necesitas ayuda no olvides contactarme a info@ingnrcs.com y +573138197896 </p>
+    </div>
+</body>
+</html>
